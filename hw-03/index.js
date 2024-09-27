@@ -36,4 +36,6 @@ const newUserName = prompt("What is your name?");
 const newUserAge = prompt("How old are you?");
 const newUserCountry = prompt("Where are you from?");
 
-console.log(`${newUserName}, ${newUserAge} years old, from ${newUserCountry}`);
+console.log(
+  `Hello ${newUserName}, ${newUserAge} years old, from ${newUserCountry}!`
+);
