@@ -30,3 +30,10 @@ const completedHW = [1, 2, 3, 4, 5];
 console.log(typeof user);
 console.log(typeof completedHW);
 console.log(Array.isArray(completedHW));
+
+// HW 3.2
+const newUserName = prompt("What is your name?");
+const newUserAge = prompt("How old are you?");
+const newUserCountry = prompt("Where are you from?");
+
+console.log(`${newUserName}, ${newUserAge} years old, from ${newUserCountry}`);
