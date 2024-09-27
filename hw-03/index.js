@@ -18,7 +18,6 @@ console.log(typeof studentId);
 console.log(typeof bigNumber);
 
 // reference data types (objects)
-
 const user = {
   name: "Olga",
   age: 18,
@@ -32,6 +31,7 @@ console.log(typeof completedHW);
 console.log(Array.isArray(completedHW));
 
 // HW 3.2
+
 const newUserName = prompt("What is your name?");
 const newUserAge = prompt("How old are you?");
 const newUserCountry = prompt("Where are you from?");
@@ -39,3 +39,19 @@ const newUserCountry = prompt("Where are you from?");
 console.log(
   `Hello ${newUserName}, ${newUserAge} years old, from ${newUserCountry}!`
 );
+
+// HW 3.3
+
+const stringToSplit = "10369";
+const splitNumbers = stringToSplit.split("");
+
+console.log(Array.isArray(splitNumbers));
+
+// with template string
+console.log(
+  `${splitNumbers[0]} ${splitNumbers[1]} ${splitNumbers[2]} ${splitNumbers[3]} ${splitNumbers[4]}`
+);
+
+// with array method join()
+const result = splitNumbers.join(" ");
+console.log(result);
