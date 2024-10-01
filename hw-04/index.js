@@ -21,55 +21,74 @@
 // }
 
 // HW 4.3
-const userYearOfBirth = +prompt("Вкажи свій рік народження");
-const userCity = prompt("В якому місті ти живеш");
-const userFavoriteSport = prompt("Який твій улюблений вид спорту");
+// const userYearOfBirth = +prompt("Вкажи свій рік народження");
+// const userCity = prompt("В якому місті ти живеш");
+// const userFavoriteSport = prompt("Який твій улюблений вид спорту");
 
-let userCapital = "";
-let sportChampion = "";
+// let userCapital = "";
+// let sportChampion = "";
 
-switch (userCity) {
-  case "Київ":
-    userCapital = "України";
+// switch (userCity) {
+//   case "Київ":
+//     userCapital = "України";
+//     break;
+//   case "Вашингтон":
+//     userCapital = "Сполучених Штатів Америки";
+//     break;
+//   case "Лондон":
+//     userCapital = "Великої Британії";
+//     break;
+//   default:
+//     userCapital = userCity;
+// }
+
+// switch (userFavoriteSport.toLowerCase()) {
+//   case "футбол":
+//     sportChampion = "Андрієм Шевченком";
+//     break;
+//   case "бокс":
+//     sportChampion = "Олександром Усіком";
+//     break;
+//   case "гімнастика":
+//     sportChampion = "Лілією Подкопаєвою";
+//     break;
+//   default:
+//     sportChampion = "чемпіоном";
+// }
+
+// if (!userYearOfBirth || !userCity || !userFavoriteSport) {
+//   alert(
+//     `Шкода, що Ви не захотіли ввести свій(оє) ${
+//       !userYearOfBirth
+//         ? "рік народження"
+//         : !userCity
+//         ? "місто"
+//         : "улюблений вид спорту"
+//     }.`
+//   );
+// } else {
+//   alert(`Тобі ${2024 - userYearOfBirth}
+//     Ти живеш у ${
+//       userCapital !== userCity ? `столиці ${userCapital}` : `місті ${userCity}`
+//     }
+//     Круто! Хочеш стати ${sportChampion} у ${userFavoriteSport.toLowerCase()}?`);
+// }
+
+// HW 4.4
+
+let numOrStr = prompt("input number or string");
+console.log(numOrStr);
+
+switch (true) {
+  case numOrStr === null:
+    console.log("ви скасували");
     break;
-  case "Вашингтон":
-    userCapital = "Сполучених Штатів Америки";
+  case numOrStr.trim() === "":
+    console.log("Empty String");
     break;
-  case "Лондон":
-    userCapital = "Великої Британії";
+  case isNaN(+numOrStr):
+    console.log(" number is Ba_NaN");
     break;
   default:
-    userCapital = userCity;
-}
-
-switch (userFavoriteSport.toLowerCase()) {
-  case "футбол":
-    sportChampion = "Андрієм Шевченком";
-    break;
-  case "бокс":
-    sportChampion = "Олександром Усіком";
-    break;
-  case "гімнастика":
-    sportChampion = "Лілією Подкопаєвою";
-    break;
-  default:
-    sportChampion = "чемпіоном";
-}
-
-if (!userYearOfBirth || !userCity || !userFavoriteSport) {
-  alert(
-    `Шкода, що Ви не захотіли ввести свій(оє) ${
-      !userYearOfBirth
-        ? "рік народження"
-        : !userCity
-        ? "місто"
-        : "улюблений вид спорту"
-    }.`
-  );
-} else {
-  alert(`Тобі ${2024 - userYearOfBirth}
-    Ти живеш у ${
-      userCapital !== userCity ? `столиці ${userCapital}` : `місті ${userCity}`
-    }
-    Круто! Хочеш стати ${sportChampion} у ${userFavoriteSport.toLowerCase()}?`);
+    console.log("OK!");
 }
