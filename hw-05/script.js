@@ -12,12 +12,12 @@ console.log(result.trimEnd());
 
 // HW 5.2
 
-const exchangeRate = 26;
+const costUSD = 26;
 let res = "";
 
 for (let dollars = 10; dollars <= 100; dollars += 10) {
-  let costInUAH = dollars * exchangeRate;
-  res += `${dollars} доларів = ${costInUAH} гривень\n`;
+  let costUAH = dollars * costUSD;
+  res += `${dollars} доларів = ${costUAH} гривень\n`;
 }
 
 console.log(res);
