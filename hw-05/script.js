@@ -23,4 +23,16 @@ for (let dollars = 10; dollars <= 100; dollars += 10) {
 console.log(res);
 
 // HW 5.3
+
+const integer = parseInt(prompt("Please put any number"));
+
+const integerArray = [];
+
+for (i = 1; i <= 100; i++) {
+  if (i * i <= integer) {
+    integerArray.push(i);
+  }
+}
+console.log(integerArray);
+
 // HW 5.4
