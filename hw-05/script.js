@@ -36,3 +36,15 @@ for (i = 1; i <= 100; i++) {
 console.log(integerArray);
 
 // HW 5.4
+
+const num = parseInt(prompt("Введіть ціле число:"));
+let isPrime = num > 1;
+
+for (let i = 2; i < num; i++) {
+  if (num % i === 0) {
+    isPrime = false;
+    break;
+  }
+}
+
+console.log(`${num} ${isPrime ? "є" : "не є"} простим числом`);
