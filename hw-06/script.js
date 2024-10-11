@@ -35,4 +35,24 @@ const resultNew = removeSymbolsNew(enteredStringNew, enteredSymbolsNew);
 console.log(resultNew);
 
 // HW 6.2
+
+const arrayOfElements = [1, "a", true, 2, 3, undefined, 4, 5];
+
+function calcAverageOfNumbers(array) {
+  let sumOfNumbers = 0;
+  let countOfNumbers = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === "number") {
+      sumOfNumbers += array[i];
+      countOfNumbers++;
+    }
+  }
+  const averageOfNumbers = sumOfNumbers / countOfNumbers;
+
+  return averageOfNumbers;
+}
+
+console.log(calcAverageOfNumbers(arrayOfElements));
+
 // HW 6.3
