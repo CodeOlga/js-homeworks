@@ -54,3 +54,30 @@ function calcAverageOfNumbers(array) {
 }
 
 console.log(calcAverageOfNumbers(arrayOfElements));
+
+// HW 6.3 - 1 спосіб
+
+const arrayOfNumbers = [1, 3, 4, 6, 2, 5, 7];
+
+function removeElement(array, item) {
+  const newArrayOfNumbers = [];
+
+  for (element of array) {
+    if (element !== item) newArrayOfNumbers.push(element);
+  }
+  return newArrayOfNumbers;
+}
+
+console.log(removeElement(arrayOfNumbers, 4));
+
+// HW 6.3 - 2 спосіб
+
+const arrayOfNumbersNew = [1, 3, 4, 6, 2, 5, 7];
+
+function removeElementNew(array, item) {
+  const updatedArray = array.filter((number) => number !== item);
+
+  return updatedArray;
+}
+
+console.log(removeElementNew(arrayOfNumbersNew, 4));
