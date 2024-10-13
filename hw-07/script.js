@@ -28,3 +28,14 @@ function multiplyCurrying(a) {
 console.log(multiplyCurrying(5)(2));
 
 // HW 7.3
+
+function getNumber() {
+  for (let i = 0; i <= 10; i++) {
+    let enteredNumber = +prompt("Enter any number greater then 100");
+    if (enteredNumber > 100) {
+      console.log(enteredNumber);
+      return;
+    }
+  }
+}
+getNumber();
