@@ -30,12 +30,17 @@ console.log(multiplyCurrying(5)(2));
 // HW 7.3
 
 function getNumber() {
-  for (let i = 0; i <= 10; i++) {
+  let lastEnteredNumber = null;
+
+  for (let i = 0; i < 10; i++) {
     let enteredNumber = +prompt("Enter any number greater then 100");
-    if (enteredNumber > 100) {
+    lastEnteredNumber = enteredNumber;
+
+    if (enteredNumber > 100 || i === 10) {
       console.log(enteredNumber);
       return;
     }
   }
+  console.log(lastEnteredNumber);
 }
 getNumber();
