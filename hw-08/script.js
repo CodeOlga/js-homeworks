@@ -1,6 +1,6 @@
 // HW 8.1
 
-let ladder = {
+const ladder = {
   step: 0,
 
   up: function () {
@@ -20,13 +20,13 @@ let ladder = {
 };
 
 // ----1-----
-// ladder.up();
+ladder.up();
 
-// ladder.up();
+ladder.up();
 
-// ladder.down();
+ladder.down();
 
-// ladder.showStep();
+ladder.showStep();
 
 // ----2-----
-ladder.up().up().down().showStep();
+// ladder.up().up().down().showStep();
