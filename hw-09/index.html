@@ -4,9 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1 style="color: rgb(230, 104, 173)">My homework 9</h1>
+    <h1>My homework 9</h1>
+
+    <h2>9.1</h2>
+    <h3>Сумма зарплат</h3>
+    <p>Дізнатись суму всіх зарплат користувачів:</p>
+    <pre><code>
+      const company = {
+        sales: [
+          { name: "John", salary: 1000 },
+          { name: "Alice", salary: 600 },
+        ],
+        development: {
+          web: [
+            { name: "Peter", salary: 2000 },
+            { name: "Alex", salary: 1800 },
+          ],
+          internals: [{ name: "Jack", salary: 1300 }],
+        },
+      };
+    </code></pre>
+    <p>
+      Об'єкт може містити невідому кількість департаментів та співробітників
+    </p>
     <script src="./script.js"></script>
   </body>
 </html>
