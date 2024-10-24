@@ -37,7 +37,30 @@ const company = {
 // const totalSalary = getTotalSalary(company);
 // console.log(`The total salary of all company employees is ${totalSalary}`);
 
-//===========2 спосіб===============
+// //===========2 спосіб===============
+// // Оптимізована функція без зовнішнього циклу
+// function getTotalSalary(departments) {
+//   // Якщо це масив, підраховуємо зарплату працівників
+//   if (Array.isArray(departments)) {
+//     return departments.reduce(
+//       (total, employee) => total + (employee.salary || 0),
+//       0
+//     );
+//   }
+
+//   // Якщо це об'єкт, рекурсивно обробляємо вкладені департаменти
+//   let total = 0;
+//   for (let subDepartment in departments) {
+//     total += getTotalSalary(departments[subDepartment]);
+//   }
+
+//   return total;
+// }
+
+// const totalSalary = getTotalSalary(company);
+// console.log(`The total salary of all company employees is ${totalSalary}`);
+
+//===========3 спосіб===============
 function getTotalSalary(departments) {
   // Перевіряємо, чи є департамент (або піддепартамент) масивом
   return Array.isArray(departments)
