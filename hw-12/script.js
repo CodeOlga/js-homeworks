@@ -17,11 +17,21 @@ enterLinkBtn.addEventListener("click", () => {
 });
 
 goLinkBtn.addEventListener("click", () => {
-  userLink
-    ? (location.href = userLink)
-    : alert("No link entered. Please enter a link first.");
+  if (userLink) {
+    location.href = userLink;
+  } else {
+    alert("No link entered. Please enter a link first.");
+  }
 });
 
 //HW 12.2
+
+const parentContainer = document.querySelector(".parent-container");
+
+parentContainer.addEventListener("click", (e) => {
+  const clickedBtn = e.target;
+
+  alert(`Clicked button: ${clickedBtn.textContent}`);
+});
 
 //HW 12.3
