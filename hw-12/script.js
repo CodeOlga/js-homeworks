@@ -25,7 +25,6 @@ goLinkBtn.addEventListener("click", () => {
 });
 
 //HW 12.2
-
 const parentContainer = document.querySelector(".parent-container");
 
 parentContainer.addEventListener("click", (e) => {
@@ -35,3 +34,35 @@ parentContainer.addEventListener("click", (e) => {
 });
 
 //HW 12.3
+const list = document.querySelector(".list");
+const input = document.querySelector(".input");
+const addItemBtn = document.querySelector(".add-item-btn");
+
+// Обробник для додавання нового завдання
+addItemBtn.addEventListener("click", () => {
+  const inputValue = input.value.trim();
+  if (inputValue === "") {
+    alert("Please, add something");
+    return;
+  }
+
+  const newItem = document.createElement("li");
+  newItem.classList.add("item");
+  newItem.textContent = inputValue;
+
+  const deleteItemBtn = document.createElement("button");
+  deleteItemBtn.classList.add("button", "delete-item-btn");
+  deleteItemBtn.textContent = "Delete";
+
+  newItem.appendChild(deleteItemBtn);
+  list.appendChild(newItem);
+
+  input.value = "";
+});
+// Обробник для видалення завдання (подій для делегування)
+list.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-item-btn")) {
+    const itemToRemove = e.target.parentElement;
+    list.removeChild(itemToRemove);
+  }
+});

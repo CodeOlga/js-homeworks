@@ -20,3 +20,32 @@ h4 {
   border-radius: 8px;
   border: none;
 }
+
+.input {
+  width: 40%;
+  padding: 10px 24px;
+  margin-right: 40px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+}
+
+.list {
+  padding: 0;
+}
+
+.item {
+  width: 60%;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.item .button {
+  margin-left: 100px;
+  padding: 4px 16px;
+  background-color: rgb(218, 37, 37);
+}
