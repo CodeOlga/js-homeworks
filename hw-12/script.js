@@ -18,7 +18,7 @@ enterLinkBtn.addEventListener("click", () => {
 
 goLinkBtn.addEventListener("click", () => {
   if (userLink) {
-    location.href = userLink;
+    location.href = userLink; //window.location
   } else {
     alert("No link entered. Please enter a link first.");
   }
@@ -42,7 +42,7 @@ const addItemBtn = document.querySelector(".add-item-btn");
 addItemBtn.addEventListener("click", () => {
   const inputValue = input.value.trim();
   if (inputValue === "") {
-    alert("Please, add something");
+    alert("Please, add something.");
     return;
   }
 
