@@ -51,11 +51,16 @@
   width: 100%;
 }
 
-.errorMessage {
+.error-message {
   display: block;
   color: rgb(240, 20, 90);
 }
 
 .hide {
   display: none;
+}
+
+.error-border {
+  border-color: rgb(240, 20, 90) !important;
+  box-shadow: none;
 }
