@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Slider</h1>
+    <section class="slider-section">
+      <button id="button-prev" class="button">
+        <img width="40" src="./images/arrow-prev.svg" alt="arrow previous" />
+      </button>
+
+      <ul class="image-list">
+        <li class="image-item is-visible fade">
+          <img width="600" src="./images/cat.jpg" alt="cat" />
+        </li>
+        <li class="image-item fade">
+          <img width="600" src="./images/dog.jpg" alt="dog" />
+        </li>
+        <li class="image-item fade">
+          <img width="600" src="./images/bird.jpg" alt="bird" />
+        </li>
+        <li class="image-item fade">
+          <img width="600" src="./images/fish.jpg" alt="fish" />
+        </li>
+        <li class="image-item fade">
+          <img width="600" src="./images/bear.jpg" alt="bear" />
+        </li>
+      </ul>
+
+      <button id="button-next" class="button">
+        <img width="40" src="./images/arrow-next.svg" alt="arrow next" />
+      </button>
+    </section>
+    <div class="dots">
+      <div class="dot is-active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

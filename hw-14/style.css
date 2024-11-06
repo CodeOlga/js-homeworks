@@ -1,0 +1,79 @@
+body {
+  padding: 50px;
+  font-family: Montserrat, sans-serif;
+}
+
+h1 {
+  color: rgb(104, 106, 230);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+.slider-section {
+  display: flex;
+  justify-content: center;
+}
+
+.image-list {
+  display: flex;
+  padding: 0px 16px;
+}
+
+.image-item {
+  display: none;
+}
+
+.image-item.is-visible {
+  display: block;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgb(231, 231, 239);
+}
+
+.dot.is-active {
+  background-color: rgb(104, 106, 230);
+}
+
+.button {
+  background-color: rgb(171, 171, 233);
+  border-color: transparent;
+  color: rgb(31, 34, 228);
+  cursor: pointer;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

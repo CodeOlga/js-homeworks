@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+  font-family: Montserrat, sans-serif;
+}
+
+h1 {
+  color: rgb(104, 106, 230);
+}
+
+.slider-section {
+  display: flex;
+}
+
+.image-list {
+  display: flex;
+  padding: 16px;
+}
+
+.is-visible {
+  display: block;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.button {
+  background-color: rgb(171, 171, 233);
+  border-color: transparent;
+  color: rgb(31, 34, 228);
+}
