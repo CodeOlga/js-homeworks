@@ -117,7 +117,7 @@ function buildToDoItem(value, uuid, checked = false) {
 
   const newCheckbox = document.createElement("input");
   newCheckbox.type = "checkbox";
-  newCheckbox.checked = checked;
+  newCheckbox.checked = checked; // = checked тут це змінна, що приходить в параметрах ф-ції
 
   const newDeleteButton = document.createElement("button");
   newDeleteButton.classList.add("todo-item__delete");
