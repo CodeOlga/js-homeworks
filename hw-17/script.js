@@ -81,3 +81,35 @@ const coach2 = new Coach("Alice Smith", "Yoga", 4.9);
 
 coach1.displayInfo();
 coach2.displayInfo();
+
+//HW 17.2
+
+class BankAccount {
+  constructor(balance) {
+    this.balance = balance;
+  }
+
+  deposit(amountToDeposit) {
+    this.balance += amountToDeposit;
+  }
+  withdraw(amountToWithdraw) {
+    amountToWithdraw > this.balance
+      ? console.log("Not enough funds to withdraw")
+      : (this.balance -= amountToWithdraw);
+  }
+  getBalance() {
+    return `Your current balance: ${this.balance} $`;
+  }
+}
+
+const account1 = new BankAccount(1000);
+
+console.log(account1.getBalance());
+
+account1.deposit(500);
+
+console.log(account1.getBalance());
+
+account1.withdraw(200);
+
+console.log(account1.getBalance());
