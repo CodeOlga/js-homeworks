@@ -92,11 +92,15 @@ class BankAccount {
   deposit(amountToDeposit) {
     this.balance += amountToDeposit;
   }
+
   withdraw(amountToWithdraw) {
-    amountToWithdraw > this.balance
-      ? console.log("Not enough funds to withdraw")
-      : (this.balance -= amountToWithdraw);
+    if (amountToWithdraw > this.balance) {
+      console.log("Not enough funds to withdraw");
+    } else {
+      this.balance -= amountToWithdraw;
+    }
   }
+
   getBalance() {
     return `Your current balance: ${this.balance} $`;
   }
