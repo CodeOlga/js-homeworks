@@ -85,24 +85,26 @@ coach2.displayInfo();
 //HW 17.2
 
 class BankAccount {
+  #balance;
+
   constructor(balance) {
-    this.balance = balance;
+    this.#balance = balance;
   }
 
   deposit(amountToDeposit) {
-    this.balance += amountToDeposit;
+    this.#balance += amountToDeposit;
   }
 
   withdraw(amountToWithdraw) {
-    if (amountToWithdraw > this.balance) {
+    if (amountToWithdraw > this.#balance) {
       console.log("Not enough funds to withdraw");
     } else {
-      this.balance -= amountToWithdraw;
+      this.#balance -= amountToWithdraw;
     }
   }
 
   getBalance() {
-    return `Your current balance: ${this.balance} $`;
+    return `Your current balance: ${this.#balance} $`;
   }
 }
 
