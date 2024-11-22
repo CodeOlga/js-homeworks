@@ -1,0 +1,57 @@
+body {
+  padding: 50px;
+  font-family: Montserrat, sans-serif;
+}
+
+h1 {
+  color: rgb(104, 106, 230);
+}
+
+h2,
+h3 {
+  color: rgb(80, 82, 80);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  padding: 20px;
+}
+
+.weather-block {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  height: 500px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background-image: url("./cat-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 8px;
+}
+
+.refetch-btn {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  background-color: #6b7bd3;
+  padding: 10px 60px;
+  border: transparent;
+  border-radius: 8px;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.city,
+.date,
+.time {
+  color: #43426e;
+}
