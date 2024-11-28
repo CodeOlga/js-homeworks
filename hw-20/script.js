@@ -121,7 +121,6 @@ $(document).ready(function () {
   const form = $("#js--form");
   const userInput = $("#js--form__input");
   const toDos = $("#js--todos-wrapper");
-  const modal = $("#exampleModal");
   const modalBody = $("#modal-body");
 
   function getTodosFromLocalStorage() {
