@@ -16,7 +16,7 @@
     "image-minimizer-webpack-plugin": "^4.1.1",
     "image-webpack-loader": "^8.1.0",
     "imagemin": "^9.0.0",
-    "imagemin-jpegtran": "^8.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
     "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.82.0",
     "sass-loader": "^16.0.4",

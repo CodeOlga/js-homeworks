@@ -50,7 +50,7 @@ module.exports = {
           // Lossless optimization with custom option
           plugins: [
             ["gifsicle", { interlaced: true }],
-            ["jpegtran", { progressive: true }],
+            ["mozjpeg", { quality: 75 }],
             ["optipng", { optimizationLevel: 5 }],
             // Svgo configuration here https://github.com/svg/svgo#configuration
             [
