@@ -1,7 +1,15 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import Button from "./Button";
 
-const TodoModal = ({ todo, onClose }) => {
+const TodoModal = ({ todo, onClose, onSave }) => {
+  const [newName, setNewName] = useState(todo.name); // Стан для зберігання нового імені
+
+  const handleSave = () => {
+    onSave(todo.id, newName); // Зберігаємо зміни
+    onClose(); // Закриємо модальне вікно
+  };
+
   return (
     <div
       className="modal show"
@@ -12,7 +20,7 @@ const TodoModal = ({ todo, onClose }) => {
       <div className="modal-dialog" role="document">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title text-primary">Your ToDo</h5>
+            <h5 className="modal-title text-primary">Edit Your ToDo</h5>
             <button
               type="button"
               className="btn-close"
@@ -21,13 +29,23 @@ const TodoModal = ({ todo, onClose }) => {
             ></button>
           </div>
           <div className="modal-body text-info">
-            <p>{todo.name}</p>
+            <input
+              type="text"
+              className="form-control"
+              value={newName}
+              onChange={(e) => setNewName(e.target.value)} // Оновлюємо стан
+            />
           </div>
           <div className="modal-footer">
             <Button
               className="btn btn-outline-danger"
               title="Close"
               onClick={onClose}
+            />
+            <Button
+              className="btn btn-outline-success"
+              title="Save"
+              onClick={handleSave} // Зберігаємо зміни
             />
           </div>
         </div>
