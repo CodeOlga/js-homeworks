@@ -28,11 +28,18 @@ export const todosSlice = createSlice({
     setSelectedTodo: (state, action) => {
       state.selectedTodo = action.payload;
     },
+
+    toggleCompleted: (state, action) => {
+      const todo = state.items.find((todo) => todo.id === action.payload);
+      if (todo) {
+        todo.checked = !todo.checked;
+      }
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addItem, removeItem, editItem, setSelectedTodo } =
+export const { addItem, removeItem, editItem, setSelectedTodo, toggleCompleted } =
   todosSlice.actions;
 
 export default todosSlice.reducer;

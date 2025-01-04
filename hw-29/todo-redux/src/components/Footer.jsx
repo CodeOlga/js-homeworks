@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="text-center mt-4">
       <p className="text-muted">
-        Total ToDo: <strong>{totalCount}</strong>
+        Total Todos: <strong>{totalCount}</strong>
       </p>
     </footer>
   );
