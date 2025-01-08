@@ -1,0 +1,9 @@
+@import "bootstrap/dist/css/bootstrap.css";
+
+.container {
+  padding: 20px;
+}
+
+.form-label {
+  font-size: 36px;
+}
