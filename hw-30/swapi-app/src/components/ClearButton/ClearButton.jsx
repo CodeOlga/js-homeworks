@@ -1,14 +1,12 @@
-/* eslint-disable react/prop-types */
 import { useDispatch } from "react-redux";
 
 import { clearData } from "../../redux/slice/swapiSlice";
 
-const ClearButton = ({ setEndpoint }) => {
+const ClearButton = () => {
   const dispatch = useDispatch();
 
   const handleClear = () => {
     dispatch(clearData());
-    setEndpoint("");
   };
 
   return (

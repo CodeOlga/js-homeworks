@@ -5,6 +5,7 @@ import { API_URL } from "../../constants/constants";
 const initialState = {
   items: null,
   loading: false,
+  endpoint: "",
 };
 
 export const swapiSlice = createSlice({
@@ -21,11 +22,16 @@ export const swapiSlice = createSlice({
     clearData: (state) => {
       state.items = null;
       state.loading = false;
+      state.endpoint = "";
+    },
+    setEndpoint: (state, action) => {
+      state.endpoint = action.payload; // оновлюємо endpoint
     },
   },
 });
 
-export const { fetchStart, getData, clearData } = swapiSlice.actions;
+export const { fetchStart, getData, clearData, setEndpoint } =
+  swapiSlice.actions;
 
 //асінхронний екшен - async thunk
 //повертаємо функцію (а не об'єкт), яка приймає dispatch

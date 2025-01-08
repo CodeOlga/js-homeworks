@@ -1,14 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../../redux/slice/swapiSlice";
-import { useState } from "react";
-
-import { isLoading } from "../../redux/slice/selectors";
-
-import Data from "../Data/Data";
-import ClearButton from "../ClearButton/ClearButton";
+import { fetchData, setEndpoint } from "../../redux/slice/swapiSlice";
+import { isLoading, apiEndpoint } from "../../redux/slice/selectors";
 
 const Form = () => {
-  const [endpoint, setEndpoint] = useState("");
+  const endpoint = useSelector(apiEndpoint);
   const dispatch = useDispatch();
   const loading = useSelector(isLoading);
 
@@ -36,16 +31,13 @@ const Form = () => {
           className="form-control"
           id="basic-url"
           placeholder="people/1/"
-          value={endpoint}
-          onChange={(event) => setEndpoint(event.target.value)}
+          value={endpoint} // значення з Redux
+          onChange={(event) => dispatch(setEndpoint(event.target.value))} // оновлюємо значення через Redux
         />
         <button className="btn btn-outline-secondary" disabled={loading}>
           Get info
         </button>
       </div>
-
-      <Data />
-      <ClearButton setEndpoint={setEndpoint} />
     </form>
   );
 };
