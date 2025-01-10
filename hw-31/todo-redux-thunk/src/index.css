@@ -1,0 +1,10 @@
+@import "bootstrap/dist/css/bootstrap.css";
+
+.container-sm {
+  max-width: 600px;
+}
+
+.todo-completed {
+  text-decoration: line-through;
+  color: #6c757d;
+}
