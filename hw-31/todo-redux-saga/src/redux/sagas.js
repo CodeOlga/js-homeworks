@@ -7,7 +7,9 @@ import {
   addTodo,
   addItem,
   editItem,
+  updateTodo,
   toggleCompleted,
+  updateTodoCompletion,
   deleteTodo,
   removeItem,
 } from "./slice/todosSlice";
@@ -67,7 +69,7 @@ function* editTodoSaga(action) {
       body: JSON.stringify({ name: newName }),
     });
 
-    yield put(editItem(updatedTodo));
+    yield put(updateTodo(updatedTodo));
   } catch (error) {
     console.error("Error editing todo:", error.message);
   }
@@ -82,7 +84,7 @@ function* toggleCompletedSaga(action) {
       body: JSON.stringify({ checked: !currentState }),
     });
 
-    yield put(toggleCompleted(updatedTodo));
+    yield put(updateTodoCompletion(updatedTodo));
   } catch (error) {
     console.error("Error toggling completion:", error.message);
   }

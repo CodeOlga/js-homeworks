@@ -11,7 +11,7 @@ const TodoModal = ({ todo, onClose }) => {
   const [newName, setNewName] = useState(todo.name); // Стан для зберігання нового імені
 
   const handleSave = () => {
-    dispatch(editItem({ id: todo.id, newName })); // Викликаємо Saga
+    dispatch(editItem({ id: todo.id, newName })); // Викликаємо Saga, діспатчимо те, що і в watchers
     onClose();
   };
 

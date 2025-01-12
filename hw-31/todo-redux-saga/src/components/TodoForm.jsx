@@ -21,7 +21,7 @@ const TodoForm = () => {
   const loading = useSelector(isLoading);
 
   const onSubmit = (data) => {
-    dispatch(addTodo(data.todo.trim())); 
+    dispatch(addTodo(data.todo.trim()));
     reset();
   };
 
@@ -54,5 +54,3 @@ const TodoForm = () => {
 };
 
 export default TodoForm;
-
-

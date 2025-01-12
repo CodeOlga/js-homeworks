@@ -22,7 +22,7 @@ const App = () => {
   }, [dispatch]);
 
   const handleSave = (id, newName) => {
-    dispatch(editItem(id, newName));
+    dispatch(editItem, { id, newName });
   };
 
   return (
