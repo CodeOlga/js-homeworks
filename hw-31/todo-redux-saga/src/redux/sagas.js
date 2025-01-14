@@ -24,6 +24,11 @@ function fetchHelper(url, options) {
 }
 
 //Workers
+
+// call - функція, яка викликає інші функції з аргументами:
+// перший параметр - функція, яку потрібно викликати; і далі аргументи
+
+// put - відповідає за функцію відправки action (можна сприймати як dispatch)
 function* fetchItemsSaga() {
   try {
     const todos = yield call(fetchHelper, API_URL_TODOS);
@@ -92,6 +97,7 @@ function* toggleCompletedSaga(action) {
 
 //Watchers
 
+// takeEvery призупиняє виконання певної саги і прослуховувати певний action
 function* watchFetchTodos() {
   yield takeEvery(fetchStart.type, fetchItemsSaga);
 }
@@ -112,6 +118,7 @@ function* watchToggleCompleted() {
   yield takeEvery(toggleCompleted.type, toggleCompletedSaga);
 }
 
+// all - об'єднює watchers всі в один
 export default function* rootSaga() {
   yield all([
     watchFetchTodos(),

@@ -17,6 +17,7 @@ const App = () => {
   const selectedTodoItem = useSelector(selectedTodo);
   const dispatch = useDispatch();
 
+  // з saga діспатчимо ті actions, які знаходяться в watcher
   useEffect(() => {
     dispatch(fetchStart());
   }, [dispatch]);
