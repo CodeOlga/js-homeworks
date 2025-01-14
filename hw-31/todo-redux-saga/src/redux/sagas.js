@@ -2,16 +2,16 @@ import { all, call, put, takeEvery } from "redux-saga/effects";
 
 import { API_URL_TODOS } from "../constants/constants";
 import {
-  fetchStart,
+  startFetchingTodos,
   setTodos,
-  addTodo,
-  addItem,
-  editItem,
-  updateTodo,
-  toggleCompleted,
-  updateTodoCompletion,
+  startDeletingTodo,
   deleteTodo,
-  removeItem,
+  startAddingTodo,
+  addTodo,
+  startEditingTodo,
+  updateTodo,
+  startToggling,
+  toggleTodo,
 } from "./slice/todosSlice";
 
 function fetchHelper(url, options) {
@@ -47,7 +47,7 @@ function* deleteItemSaga(action) {
       method: "DELETE",
     });
 
-    yield put(removeItem(todo.id));
+    yield put(deleteTodo(todo.id));
   } catch (error) {
     console.error("Error fetching todos:", error.message);
   }
@@ -61,7 +61,7 @@ function* addItemSaga(action) {
       body: JSON.stringify({ name: action.payload }),
     });
 
-    yield put(addItem(todo));
+    yield put(addTodo(todo));
   } catch (error) {
     console.error("Error fetching todos:", error.message);
   }
@@ -91,7 +91,7 @@ function* toggleCompletedSaga(action) {
       body: JSON.stringify({ checked: !currentState }),
     });
 
-    yield put(updateTodoCompletion(updatedTodo));
+    yield put(toggleTodo(updatedTodo));
   } catch (error) {
     console.error("Error toggling completion:", error.message);
   }
@@ -104,23 +104,23 @@ function* toggleCompletedSaga(action) {
 // перший параметр - тип єкшена, якій ми хочемо відслідковувати =>
 // якщо він відпрацював - redux saga викликає відповідний worker
 function* watchFetchTodos() {
-  yield takeEvery(fetchStart.type, fetchItemsSaga);
+  yield takeEvery(startFetchingTodos.type, fetchItemsSaga);
 }
 
 function* watchDeleteTodo() {
-  yield takeEvery(deleteTodo.type, deleteItemSaga);
+  yield takeEvery(startDeletingTodo.type, deleteItemSaga);
 }
 
 function* watchAddTodo() {
-  yield takeEvery(addTodo.type, addItemSaga);
+  yield takeEvery(startAddingTodo.type, addItemSaga);
 }
 
 function* watchEditTodo() {
-  yield takeEvery(editItem.type, editTodoSaga);
+  yield takeEvery(startEditingTodo.type, editTodoSaga);
 }
 
 function* watchToggleCompleted() {
-  yield takeEvery(toggleCompleted.type, toggleCompletedSaga);
+  yield takeEvery(startToggling.type, toggleCompletedSaga);
 }
 
 // all - об'єднює watchers всі в один

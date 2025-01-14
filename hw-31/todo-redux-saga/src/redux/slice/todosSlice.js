@@ -11,7 +11,7 @@ const todosSlice = createSlice({
   initialState,
   reducers: {
     // for saga watchers and components
-    fetchStart: (state) => {
+    startFetchingTodos: (state) => {
       state.loading = true;
     },
     // for saga workers
@@ -20,23 +20,23 @@ const todosSlice = createSlice({
       state.loading = false;
     },
 
-    deleteTodo: (state) => {
+    startDeletingTodo: (state) => {
       state.loading = true;
     },
-    removeItem: (state, action) => {
+    deleteTodo: (state, action) => {
       state.items = state.items.filter((todo) => todo.id !== action.payload);
       state.loading = false;
     },
 
-    addTodo: (state) => {
+    startAddingTodo: (state) => {
       state.loading = true;
     },
-    addItem: (state, action) => {
+    addTodo: (state, action) => {
       state.items.push(action.payload);
       state.loading = false;
     },
 
-    editItem: (state) => {
+    startEditingTodo: (state) => {
       state.loading = true;
     },
     updateTodo: (state, action) => {
@@ -48,14 +48,10 @@ const todosSlice = createSlice({
       state.loading = false;
     },
 
-    setSelectedTodo: (state, action) => {
-      state.selectedTodo = action.payload;
-    },
-
-    toggleCompleted: (state) => {
+    startToggling: (state) => {
       state.loading = true;
     },
-    updateTodoCompletion: (state, action) => {
+    toggleTodo: (state, action) => {
       const updatedTodo = action.payload;
       const index = state.items.findIndex((todo) => todo.id === updatedTodo.id);
       if (index !== -1) {
@@ -63,21 +59,25 @@ const todosSlice = createSlice({
       }
       state.loading = false;
     },
+
+    setSelectedTodo: (state, action) => {
+      state.selectedTodo = action.payload;
+    },
   },
 });
 
 export const {
-  fetchStart,
-  deleteTodo,
-  addTodo,
+  startFetchingTodos,
   setTodos,
-  addItem,
-  editItem,
+  startDeletingTodo,
+  deleteTodo,
+  startAddingTodo,
+  addTodo,
+  startEditingTodo,
   updateTodo,
-  removeItem,
+  startToggling,
+  toggleTodo,
   setSelectedTodo,
-  toggleCompleted,
-  updateTodoCompletion,
 } = todosSlice.actions;
 
 export default todosSlice.reducer;

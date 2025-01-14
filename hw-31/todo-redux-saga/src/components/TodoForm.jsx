@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addTodo } from "../redux/slice/todosSlice";
+import { startAddingTodo } from "../redux/slice/todosSlice";
 import { isLoading } from "../redux/slice/selectors";
 
 const TodoForm = () => {
@@ -21,7 +21,7 @@ const TodoForm = () => {
   const loading = useSelector(isLoading);
 
   const onSubmit = (data) => {
-    dispatch(addTodo(data.todo.trim()));
+    dispatch(startAddingTodo(data.todo.trim()));
     reset();
   };
 

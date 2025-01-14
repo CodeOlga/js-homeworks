@@ -7,11 +7,7 @@ import TodoModal from "./components/TodoModal";
 import Footer from "./components/Footer";
 
 import { selectedTodo } from "./redux/slice/selectors";
-import {
-  fetchStart,
-  setSelectedTodo,
-  editItem,
-} from "./redux/slice/todosSlice";
+import { startFetchingTodos, setSelectedTodo } from "./redux/slice/todosSlice";
 
 const App = () => {
   const selectedTodoItem = useSelector(selectedTodo);
@@ -19,12 +15,8 @@ const App = () => {
 
   // з saga діспатчимо ті actions, які знаходяться в watcher
   useEffect(() => {
-    dispatch(fetchStart());
+    dispatch(startFetchingTodos());
   }, [dispatch]);
-
-  const handleSave = (id, newName) => {
-    dispatch(editItem, { id, newName });
-  };
 
   return (
     <div className="container-sm">
@@ -36,7 +28,6 @@ const App = () => {
         <TodoModal
           todo={selectedTodoItem}
           onClose={() => dispatch(setSelectedTodo(null))}
-          onSave={handleSave}
         />
       )}
     </div>

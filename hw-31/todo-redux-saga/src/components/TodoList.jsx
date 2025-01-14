@@ -2,9 +2,9 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { todosItems } from "../redux/slice/selectors";
 import {
+  startDeletingTodo,
+  startToggling,
   setSelectedTodo,
-  toggleCompleted,
-  deleteTodo,
 } from "../redux/slice/todosSlice";
 
 const TodoList = () => {
@@ -23,7 +23,7 @@ const TodoList = () => {
             checked={todo.checked}
             onChange={() =>
               dispatch(
-                toggleCompleted({
+                startToggling({
                   todoId: todo.id,
                   currentState: todo.checked,
                 })
@@ -42,7 +42,7 @@ const TodoList = () => {
             </button>
             <button
               className="btn btn-outline-danger btn-sm"
-              onClick={() => dispatch(deleteTodo(todo.id))}
+              onClick={() => dispatch(startDeletingTodo(todo.id))}
             >
               Delete
             </button>

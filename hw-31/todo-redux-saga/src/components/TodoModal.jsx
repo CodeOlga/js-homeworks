@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { editItem } from "../redux/slice/todosSlice";
+import { startEditingTodo } from "../redux/slice/todosSlice";
 
 import Button from "./Button";
 
@@ -10,8 +10,10 @@ const TodoModal = ({ todo, onClose }) => {
   const dispatch = useDispatch();
   const [newName, setNewName] = useState(todo.name); // Стан для зберігання нового імені
 
-  const handleSave = () => {
-    dispatch(editItem({ id: todo.id, newName })); // Викликаємо Saga, діспатчимо те, що і в watchers
+  const handleSave = (e) => {
+    e.preventDefault();
+
+    dispatch(startEditingTodo({ id: todo.id, newName })); // Викликаємо Saga, діспатчимо те, що і в watchers
     onClose();
   };
 
