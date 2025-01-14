@@ -25,6 +25,8 @@ function fetchHelper(url, options) {
 
 //Workers
 
+// function* - це функція-генератор
+
 // call - функція, яка викликає інші функції з аргументами:
 // перший параметр - функція, яку потрібно викликати; і далі аргументи
 
@@ -98,6 +100,9 @@ function* toggleCompletedSaga(action) {
 //Watchers
 
 // takeEvery призупиняє виконання певної саги і прослуховувати певний action
+
+// перший параметр - тип єкшена, якій ми хочемо відслідковувати =>
+// якщо він відпрацював - redux saga викликає відповідний worker
 function* watchFetchTodos() {
   yield takeEvery(fetchStart.type, fetchItemsSaga);
 }

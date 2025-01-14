@@ -13,7 +13,7 @@ export const store = configureStore({
     todos: todosReducer,
   },
   middleware: (getDefaultMiddleware) => [
-    ...getDefaultMiddleware(),
+    ...getDefaultMiddleware({ thunk: false }),
     sagaMiddleware,
   ],
 });
