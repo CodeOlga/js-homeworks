@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import TodoForm from "../TodoForm/TodoForm";
-import TodoList from "../TodoList/TodoList";
-import TodoModal from "../TodoModal/TodoModal";
+
+import TodoForm from "../../components/TodoForm/TodoForm";
+import TodoList from "../../components/TodoList/TodoList";
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
-  const [selectedTodo, setSelectedTodo] = useState(null);
 
   useEffect(() => {
     const savedTodos = localStorage.getItem("todos");
@@ -41,15 +40,7 @@ const Todo = () => {
     <div className="container container-sm">
       <h1 className="text-primary my-3">ToDoList</h1>
       <TodoForm addTodo={addTodo} />
-      <TodoList
-        todos={todos}
-        toggleTodo={toggleTodo}
-        deleteTodo={deleteTodo}
-        setSelectedTodo={setSelectedTodo}
-      />
-      {selectedTodo && (
-        <TodoModal todo={selectedTodo} onClose={() => setSelectedTodo(null)} />
-      )}
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
 };

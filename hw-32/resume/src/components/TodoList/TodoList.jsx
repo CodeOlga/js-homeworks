@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Button from "../Button/Button";
 
-const TodoList = ({ todos, toggleTodo, deleteTodo, setSelectedTodo }) => {
+const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
     <ul className="list-group">
       {todos.map((todo) => (
@@ -19,7 +19,6 @@ const TodoList = ({ todos, toggleTodo, deleteTodo, setSelectedTodo }) => {
             <span
               className={todo.checked ? "text-decoration-line-through" : ""}
               data-bs-toggle="modal"
-              onClick={() => setSelectedTodo(todo)}
               style={{ cursor: "pointer" }}
             >
               {todo.name}
