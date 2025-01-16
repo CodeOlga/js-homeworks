@@ -1,23 +1,65 @@
-import Link from "../Link/Link";
+import { List, ListItem, Link, Paper, Typography } from "@mui/material";
+
 import Toggle from "../Toggle/Toggle";
 
 const Header = () => (
-  <header className="header">
-    <h1>OlgaK</h1>
-    <ul className="header__logo">
-      <li>
-        <Link href="/">Main</Link>
-      </li>
-      <li>
-        <Link href="/todo">Todo</Link>
-      </li>
-      <li>
-        <Link href="/swapi">Swapi</Link>
-      </li>
-    </ul>
+  <Paper
+    component="header"
+    sx={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "20px 40px",
+    }}
+  >
+    <Typography variant="h4" component="h4" color="secondary">
+      OlgaK
+    </Typography>
+
+    <List
+      component="ul"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <ListItem component="li">
+        <Link
+          href="/"
+          sx={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          Main
+        </Link>
+      </ListItem>
+      <ListItem component="li">
+        <Link
+          href="/todo"
+          sx={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          Todo
+        </Link>
+      </ListItem>
+      <ListItem component="li">
+        <Link
+          href="/swapi"
+          sx={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          Swapi
+        </Link>
+      </ListItem>
+    </List>
 
     <Toggle />
-  </header>
+  </Paper>
 );
 
 export default Header;

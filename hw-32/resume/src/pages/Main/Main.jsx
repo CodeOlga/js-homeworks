@@ -1,54 +1,113 @@
+import {
+  Box,
+  Container,
+  Paper,
+  Typography,
+  List,
+  ListItem,
+} from "@mui/material";
+
 const Main = () => {
   return (
-    <div className="container">
-      <h1 className="text-primary my-3">About Me</h1>
-      <h2>Olga Kryvutsenko</h2>
-      <p>Junior Frontend Developer</p>
-      <p>
-        Hello, I&apos;m Olga, and I&apos;m studying web development. I&apos;m
-        passionate about creating modern websites and learning new technologies.
-        Currently, I&apos;m exploring React and building projects to improve my
-        skills.
-      </p>
+    <Container>
+      <Typography variant="h2" component="h1">
+        About Me
+      </Typography>
+      <Paper
+        sx={{
+          padding: "20px 60px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "40px",
+        }}
+      >
+        <Typography variant="h3" component="h2" color="secondary">
+          Olga Kryvutsenko
+        </Typography>
+        <Typography variant="body1" component="p">
+          Junior Frontend Developer
+        </Typography>
+        <Typography variant="body2" component="p">
+          Hello, I&apos;m Olga, and I&apos;m studying web development. I&apos;m
+          passionate about creating modern websites and learning new
+          technologies. Currently, I&apos;m exploring React and building
+          projects to improve my skills.
+        </Typography>
 
-      <section className="tech-skills">
-        <h2>Tech Skills</h2>
-        <ul>
-          <li>HTML5/CSS3</li>
-          <li>Vanilla JavaScript</li>
-          <li>React, Redux</li>
-          <li>Responsive/Adaptive Design</li>
-          <li>GIT/GitHub</li>
-          <li>REST API</li>
-          <li>Webpack, Vite</li>
-        </ul>
-      </section>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <Box type="section">
+            <Typography variant="h4" component="h4">
+              Tech Skills
+            </Typography>
+            <List>
+              <ListItem>HTML5/CSS3</ListItem>
+              <ListItem>Vanilla JavaScript</ListItem>
+              <ListItem>React, Redux</ListItem>
+              <ListItem>Responsive/Adaptive Design</ListItem>
+              <ListItem>GIT/GitHub</ListItem>
+              <ListItem>REST API</ListItem>
+              <ListItem>Webpack, Vite</ListItem>
+            </List>
+          </Box>
 
-      <section className="soft-skills">
-        <h2>Soft Skills</h2>
-        <ul>
-          <li>Effective Communication</li>
-          <li>Problem-Solving Abilities</li>
-          <li>Strong Time Management</li>
-          <li>Collaborative Team Player</li>
-          <li>Adaptability to New Technologies</li>
-        </ul>
-      </section>
+          <Box type="section">
+            <Typography variant="h4" component="h4">
+              Soft Skills
+            </Typography>
+            <List>
+              <ListItem>Effective Communication</ListItem>
+              <ListItem>Problem-Solving Abilities</ListItem>
+              <ListItem>Strong Time Management</ListItem>
+              <ListItem>Collaborative Team Player</ListItem>
+              <ListItem>Adaptability to New Technologies</ListItem>
+            </List>
+          </Box>
+        </Box>
 
-      <section className="projects">
-        <h2>Projects</h2>
-        <ul>
-          <li>
-            <h3>Todo List</h3>
-            <p>HTML, CSS, React, Vite, Git</p>
-          </li>
-          <li>
-            <h3>SWAPI</h3>
-            <p>HTML, CSS, React, API, Vite, Git</p>
-          </li>
-        </ul>
-      </section>
-    </div>
+        <Box type="section">
+          <Typography variant="h4" component="h4">
+            Projects
+          </Typography>
+          <List>
+            <ListItem
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "10px",
+              }}
+            >
+              <Typography variant="h5" component="h5">
+                Todo List
+              </Typography>
+              <Typography variant="body2" component="p">
+                HTML, CSS, React, Vite, Git
+              </Typography>
+            </ListItem>
+            <ListItem
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "10px",
+              }}
+            >
+              <Typography variant="h5" component="h5">
+                SWAPI
+              </Typography>
+              <Typography variant="body2" component="p">
+                HTML, CSS, React, API, Vite, Git
+              </Typography>
+            </ListItem>
+          </List>
+        </Box>
+      </Paper>
+    </Container>
   );
 };
 

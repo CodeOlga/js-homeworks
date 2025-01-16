@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { Container, Typography } from "@mui/material";
+
 import TodoForm from "../../components/TodoForm/TodoForm";
 import TodoList from "../../components/TodoList/TodoList";
 
@@ -37,11 +39,13 @@ const Todo = () => {
   };
 
   return (
-    <div className="container container-sm">
-      <h1 className="text-primary my-3">ToDoList</h1>
+    <Container maxWidth="sm">
+      <Typography variant="h2" component="h1">
+        ToDoList
+      </Typography>
       <TodoForm addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-    </div>
+    </Container>
   );
 };
 

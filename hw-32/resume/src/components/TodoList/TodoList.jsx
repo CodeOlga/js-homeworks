@@ -1,37 +1,49 @@
 /* eslint-disable react/prop-types */
-import Button from "../Button/Button";
+import { Stack, Paper, Checkbox, IconButton } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import DeleteIcon from "@mui/icons-material/Delete";
+
+const Item = styled(Paper)(({ theme }) => {
+  return {
+    textAlign: "left",
+    padding: theme.spacing(1),
+    color: theme.palette.text.secondary,
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
+});
 
 const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
-    <ul className="list-group">
+    <Stack spacing={2} sx={{ marginTop: "10px" }}>
       {todos.map((todo) => (
-        <li
-          key={todo.id}
-          className="list-group-item d-flex justify-content-between align-items-center"
-        >
+        <Item key={todo.id}>
           <div>
-            <input
-              type="checkbox"
+            <Checkbox
               checked={todo.checked}
               onChange={() => toggleTodo(todo.id)}
-              className="me-2"
             />
+
             <span
-              className={todo.checked ? "text-decoration-line-through" : ""}
-              data-bs-toggle="modal"
-              style={{ cursor: "pointer" }}
+              style={{
+                textDecoration: todo.checked ? "line-through" : "none",
+                cursor: "pointer",
+              }}
             >
               {todo.name}
             </span>
           </div>
-          <Button
-            className="btn btn-outline-danger btn-sm"
-            title="Delete"
+          <IconButton
+            color="error"
+            sx={{ p: "10px" }}
             onClick={() => deleteTodo(todo.id)}
-          />
-        </li>
+          >
+            <DeleteIcon />
+          </IconButton>
+        </Item>
       ))}
-    </ul>
+    </Stack>
   );
 };
 
