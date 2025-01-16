@@ -1,17 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Link } from "@mui/material";
 
 const NotFound = () => {
   return (
     <Container>
-      <Typography variant="h1" component="h1">
+      <Typography
+        variant="h2"
+        component="h1"
+        color="error"
+        sx={{ marginBottom: "40px" }}
+      >
         404 - Page Not Found
       </Typography>
-      <Typography variant="body1" component="p">
+      <Typography variant="body1" component="p" sx={{ marginBottom: "40px" }}>
         Sorry, the page you are looking for does not exist.
       </Typography>
-      <Link to="/">Go to Main</Link>
+      <Link
+        component={RouterLink}
+        to="/"
+        sx={{
+          textDecoration: "none",
+        }}
+      >
+        Go to Main
+      </Link>
     </Container>
   );
 };

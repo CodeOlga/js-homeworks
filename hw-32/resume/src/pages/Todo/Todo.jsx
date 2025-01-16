@@ -40,7 +40,7 @@ const Todo = () => {
 
   return (
     <Container maxWidth="sm">
-      <Typography variant="h2" component="h1">
+      <Typography variant="h2" component="h1" sx={{ marginBottom: "40px" }}>
         ToDoList
       </Typography>
       <TodoForm addTodo={addTodo} />

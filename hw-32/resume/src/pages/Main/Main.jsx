@@ -10,7 +10,7 @@ import {
 const Main = () => {
   return (
     <Container>
-      <Typography variant="h2" component="h1">
+      <Typography variant="h2" component="h1" sx={{ marginBottom: "40px" }}>
         About Me
       </Typography>
       <Paper

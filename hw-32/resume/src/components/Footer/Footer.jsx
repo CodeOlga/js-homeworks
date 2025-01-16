@@ -1,7 +1,5 @@
 import { List, ListItem, Link, Paper, Typography } from "@mui/material";
 
-// import Link from "../Link/Link";
-
 const Footer = () => (
   <Paper
     component="footer"

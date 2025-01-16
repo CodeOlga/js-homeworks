@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Component } from "react";
+import { Link as RouterLink } from "react-router-dom";
+
+import { Container, Typography, Link } from "@mui/material";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -16,12 +19,30 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="container">
-          <h1 className="red-color mt-5">Something went wrong!</h1>
-          <p>
-            <a href="/">Go to main</a>
-          </p>
-        </div>
+        <Container
+          sx={{
+            padding: "40px 120px",
+          }}
+        >
+          <Typography
+            variant="h2"
+            component="h1"
+            color="error"
+            sx={{ marginBottom: "40px" }}
+          >
+            Something went wrong!
+          </Typography>
+
+          <Link
+            component={RouterLink}
+            to="/"
+            sx={{
+              textDecoration: "none",
+            }}
+          >
+            Go to Main
+          </Link>
+        </Container>
       );
     }
 

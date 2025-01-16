@@ -1,5 +1,6 @@
-import { List, ListItem, Link, Paper, Typography } from "@mui/material";
+import { List, ListItem, Paper, Typography } from "@mui/material";
 
+import Link from "../Link/Link";
 import Toggle from "../Toggle/Toggle";
 
 const Header = () => (
@@ -16,48 +17,17 @@ const Header = () => (
       OlgaK
     </Typography>
 
-    <List
-      component="ul"
-      sx={{
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
+    <List component="ul" sx={{ display: "flex", alignItems: "center" }}>
       <ListItem component="li">
-        <Link
-          href="/"
-          sx={{
-            textDecoration: "none",
-            color: "inherit",
-          }}
-        >
-          Main
-        </Link>
+        <Link to="/">Main</Link>
       </ListItem>
       <ListItem component="li">
-        <Link
-          href="/todo"
-          sx={{
-            textDecoration: "none",
-            color: "inherit",
-          }}
-        >
-          Todo
-        </Link>
+        <Link to="/todo">Todo</Link>
       </ListItem>
       <ListItem component="li">
-        <Link
-          href="/swapi"
-          sx={{
-            textDecoration: "none",
-            color: "inherit",
-          }}
-        >
-          Swapi
-        </Link>
+        <Link to="/swapi">Swapi</Link>
       </ListItem>
     </List>
-
     <Toggle />
   </Paper>
 );

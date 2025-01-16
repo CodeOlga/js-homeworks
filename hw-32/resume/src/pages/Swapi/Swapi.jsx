@@ -1,8 +1,12 @@
+import { Container, Typography } from "@mui/material";
+
 const Swapi = () => {
   return (
-    <div className="container">
-      <h1 className="text-primary my-3">Star Wars API</h1>
-    </div>
+    <Container>
+      <Typography variant="h2" component="h1" sx={{ marginBottom: "40px" }}>
+        Star Wars API
+      </Typography>
+    </Container>
   );
 };
 
