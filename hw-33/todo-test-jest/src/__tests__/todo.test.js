@@ -3,7 +3,7 @@
 
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import App from "../src/App";
+import App from "../App.jsx";
 
 describe("App", () => {
   test("Component has heading", () => {
